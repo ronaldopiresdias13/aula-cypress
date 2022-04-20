@@ -4,8 +4,5 @@ describe("Testando Formulario", () => {
     cy.visit("/");
     //Selecionando o FORM
     cy.get("form");
-    // cy.get('input[name="name"]').type("RONALDO");
-
       });
-
 });
