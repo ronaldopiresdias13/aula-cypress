@@ -1,11 +1,17 @@
 name: learn-github-actions
 on: [push]
+
 jobs:
-  build-ionic:
+  build:
+    name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-      - run: |
-          npm i
-          npm run build
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Run Tests
+        run: npm run test
+      
