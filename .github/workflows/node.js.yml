@@ -1,9 +1,11 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  check-bats-version:
+  build-ionic:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-      - run: node -v
+      - run: |
+          npm i
+          npm run build
